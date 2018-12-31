@@ -89,8 +89,8 @@ CASE WHEN M.memid = 0 THEN (F.guestcost * B.slots) ELSE (F.membercost * B.slots)
 FROM Bookings B
 INNER JOIN Facilities F ON F.facid = B.facid
 INNER JOIN Members M ON M.memid = B.memid
-WHERE B.starttime LIKE '2012-09-14%' AND
-    CASE WHEN M.memid = 0 THEN (F.guestcost * B.slots) ELSE (F.membercost * B.slots) END > 30
+WHERE B.starttime LIKE '2012-09-14%'
+HAVING booking_cost > 30
 ORDER BY booking_cost DESC
 
 
@@ -128,6 +128,6 @@ FROM
      GROUP BY facid
     ) total_slots_table
 INNER JOIN Facilities F ON F.facid = total_slots_table.facid
-WHERE ((F.membercost * total_memb_slots) + (F.guestcost * total_guest_slots)) < 1000
+HAVING rev_per_fac < 1000
 ORDER BY rev_per_fac
 
