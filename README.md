@@ -1,1 +1,3 @@
-# Springboard
+## Springboard Projects by Earnest Long, Jr.
+
+Instead of creating a separate repo for each of my Springboard projects, I've decided to host them all in this repo together. Each folder contains a separate project, and each folder name describes the topic of the project therein. Exceptions are the "relax_challenge" and "ultimate_challenge" projects (mock data science take-home interviews) and "hospital_readmit" (Inferential Statistics).
